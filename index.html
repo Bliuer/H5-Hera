@@ -187,7 +187,7 @@
     // 初始兜底函数，防止 module 加载慢导致点击没反应
     window.handleWhatsAppClick = function() {
         console.log("Fallback handler triggered");
-        if (typeof fbq !== 'undefined') fbq('track', 'Contact');
+        if (typeof fbq !== 'undefined') fbq('track', 'Purchase');
         // 随机选一个跳转，确保体验不中断
         const link = WHATSAPP_LINKS[Math.floor(Math.random() * WHATSAPP_LINKS.length)];
         window.location.href = link;
@@ -231,7 +231,7 @@
 
     // 覆盖全局函数，实现严格轮询
     window.handleWhatsAppClick = async function() {
-        if (typeof fbq !== 'undefined') fbq('track', 'Contact');
+        if (typeof fbq !== 'undefined') fbq('track', 'Purchase');
 
         let finalUrl = links[Math.floor(Math.random() * links.length)];
 
